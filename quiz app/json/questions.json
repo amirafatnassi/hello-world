@@ -1,0 +1,16 @@
+data = [
+    {question: "", answers: {a: "", b: "", c: "", d: ""}, correctAnswer: ""},
+    {question: "", answers: {a: "", b: "", c: "", d: ""}, correctAnswer: ""},
+    {question: "", answers: {a: "", b: "", c: "", d: ""}, correctAnswer: ""},
+    {question: "", answers: {a: "", b: "", c: "", d: ""}, correctAnswer: ""},
+    {question: "", answers: {a: "", b: "", c: "", d: ""}, correctAnswer: ""},
+    {
+        question: "The Plaka is the oldest quarter of which city?", 
+        answers: {
+        a: " Athens", 
+        b: "Prague", 
+        c: "Rome", 
+        d: "Vienna"}, 
+        correctAnswer: "a"
+         },
+    ];
