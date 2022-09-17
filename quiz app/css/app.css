@@ -1,0 +1,118 @@
+body {
+  margin: 0; /* set all margins to 0px */
+  padding: 0px; /* set padding to 0px */
+  font-family: Arial; /* set font to arial font face */
+  font-size: 20px; /* set the font size to 20px */
+  text-align: center; /* align text to the center */
+  background-color: #eee; /* set the backgound color to off white */
+  overflow-x: hidden; /* prevent scrolling on the X axis */
+}
+#header {
+  border-bottom: 1px solid #666; /* Display a solid border on the bottom edge of the element */
+  color: #222; /* Make the text colour dark grey */
+  display: block; /* Display the element as a block. Starts a new line and takes up the whole width */
+  padding: 10px 0;  /*  Set padding top and bottom to 10px and right and left to 0 */
+  text-align: center;   /* align text to center */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ccc),
+    to(#999)
+  );    /* create a gradient light-grey to dark-grey , from top to bottom */
+}
+#header h1 {
+  text-shadow: 0px 1px 0px #fff;    /* text shadow -offset-x pffset-y blur-radius colour */
+  font-weight: 300;     /* set font thickness to thin (900max) */
+  margin: 0px;      /* set all margins to 0px */
+  padding: 10px;    /* set padding to 10px */
+  font-size: 25px;  /* set the font size to 25px */
+}
+.question {
+  font-size: 30px;
+  margin: 0 5% 20px 5%;
+}
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label {
+  display: block;
+  margin-bottom: 10px;
+}
+button p {
+  margin-top: -8px; /* moves button text up to 8px */
+}
+button {
+    font-weight: 200; /* Font thickness */
+    font-size: 20px; /* Font size in pixels */
+    width: 300px; /* Width of the buttons */
+    height: 50px; /* Height of the buttons */
+    padding: 20px; /* Padding around the elements content */
+  cursor: pointer; /*Change the cursor to a pointer */
+  border-radius: 3px; /* set all corners of the element to a radius of 3px */
+  color: #fff;  /* set text color to white */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#aaa),
+    to(#888)
+  ); /*  Set background of the button to a gradient */
+  margin-top: 15px; /* Make a 15px space above all button elements */
+}
+button:hover {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#bbb),
+    to(#999)
+  ); /* Change the background colour to a lighter gradient */
+}
+.quiz-wrapper {
+  position: relative;
+  height: 200px;
+  margin: 30px 0 60px 0;
+}
+.rad_butn {
+  transform: scale(200%);
+  margin: 0 30px 0 -20px;
+}
+#results {
+  margin-top: 15px;
+  padding: 20px;
+}
+.slide {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide {
+  opacity: 1;
+  z-index: 2;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  text-shadow: 0px 1px 0px #fff;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ccc),
+    to(#999)
+  );
+}
+#footer h5 {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15px;
+}
