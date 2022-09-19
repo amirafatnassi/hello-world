@@ -1,9 +1,31 @@
 data = [
-    {question: "", answers: {a: "", b: "", c: "", d: ""}, correctAnswer: ""},
-    {question: "", answers: {a: "", b: "", c: "", d: ""}, correctAnswer: ""},
-    {question: "", answers: {a: "", b: "", c: "", d: ""}, correctAnswer: ""},
-    {question: "", answers: {a: "", b: "", c: "", d: ""}, correctAnswer: ""},
-    {question: "", answers: {a: "", b: "", c: "", d: ""}, correctAnswer: ""},
+    {
+        question: "The plaka is the oldest quarter of which city", 
+        answers: {
+            a: "Athens",
+             b: "Prague",
+              c: "Rome", 
+              d: "Vienna"},
+               correctAnswer: "a"
+    },
+    {
+        question: "What colour is the sky?", 
+        answers: {
+            a: "Red",
+             b: "Yellow",
+              c: "Green", 
+              d: "Blue"},
+               correctAnswer: "d"
+    },
+    {
+        question: "What is Kudzu ?", 
+        answers: {
+            a: "Antelope",
+             b: "Bird",
+              c: "Jewish settlement", 
+              d: "Climbing plant"},
+               correctAnswer: "a"
+    },
     {
         question: "The Plaka is the oldest quarter of which city?", 
         answers: {
@@ -12,5 +34,5 @@ data = [
         c: "Rome", 
         d: "Vienna"}, 
         correctAnswer: "a"
-         },
+    },
     ];
