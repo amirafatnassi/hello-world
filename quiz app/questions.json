@@ -1,0 +1,34 @@
+[
+  {
+    "question": "The plaka is the oldest quarter of which city",
+    "answer_a": "Athens",
+    "answer_b": "Prague",
+    "answer_c": "Rome",
+    "answer_d": "Vienna",
+    "correctAnswer": "a"
+  },
+  {
+    "question": "What colour is the sky?",
+    "answer_a": "Red",
+    "answer_b": "Yellow",
+    "answer_c": "Green",
+    "answer_d": "Blue",
+    "correctAnswer": "d"
+  },
+  {
+    "question": "What is Kudzu ?",
+    "answer_a": "Antelope",
+    "answer_b": "Bird",
+    "answer_c": "Jewish settlement",
+    "answer_d": "Climbing plant",
+    "correctAnswer": "a"
+  },
+  {
+    "question": "The Plaka is the oldest quarter of which city?",
+    "answer_a": " Athens",
+    "answer_b": "Prague",
+    "answer_c": "Rome",
+    "answer_d": "Vienna",
+    "correctAnswer": "a"
+  }
+]

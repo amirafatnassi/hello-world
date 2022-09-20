@@ -1,40 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="user-scalable=no, width=device-width" />
-    <link rel="stylesheet" type="text/css" href="css/app" />
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
     <title>Question Time</title>
-    <script type="text/javascript" src="json/questions.json"></script>
   </head>
   <body>
-    <div id="header">
-      <h1>
-        Question Time <br />
-        The Quiz App
-      </h1>
-    </div>
-    <div class="quiz-wrapper">
-      <div id="quiz"></div>
-    </div>
-    <button id="previous"><p>Previous Question</p></button>
-    <button id="next"><p>Next Question</p></button>
-    <button id="submit"><p>SubmitQuiz</p></button>
-    <div id="results"></div>
-    <h2>Countdown Timer</h2>
-    <div id="clockdiv">
-      <div>
-        <div class="smalltext">Minutes</div>
-        <span class="minutes"></span>
+    <div class="quiz-app">
+      <div class="quiz-info">
+        <div class="category">Category: <span>HTML</span></div>
+        <div class="count">Questions count: <span>10</span></div>
       </div>
-      <div>
-        <div class="smalltext">Seconds</div>
-        <span class="seconds"></span>
+      <div class="quiz-area">
+        <h2>aaaaaaaaaaaaaaaaaa</h2>
       </div>
+      <div class="answers-area">
+        <div class="answer">
+          <input type="radio" id="answer_a" name="questions" />
+          <label for="answer_a">aaaa</label>
+        </div>
+        <div class="answer">
+          <input type="radio" id="answer_b" name="questions" />
+          <label for="answer_b">bb</label>
+        </div>
+        <div class="answer">
+          <input type="radio" id="answer_c" name="questions" />
+          <label for="answer_c">ccccccc</label>
+        </div>
+        <div class="answer">
+          <input type="radio" id="answer_d" name="questions" />
+          <label for="answer_d">ddddd</label>
+        </div>
+      </div>
+      <button class="submit-button">Submit answer</button>
+      <div class="bullets">
+        <div class="spans">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="countdown">
+          <span class="minutes">02</span>
+          <span class="seconds">45</span>
+        </div>
+      </div>
+      <div class="results"></div>
     </div>
-    <div id="footer">
-      <h5>Written by Garry Owen & copy Copyright December 2021</h5>
-    </div>
-    <script src="js/app.js"></script>
-    <script src="js/countdown.js"></script>
   </body>
 </html>

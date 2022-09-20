@@ -1,6 +1,7 @@
 function buildQuiz() {
   const output = [];
-  myQuestions.forEach((currentQuestion, questionNumber) => {
+  myQuestions.forEach(
+    (currentQuestion, questionNumber) => {
     const answers = [];
     for (letter in currentQuestion.answers) {
       answers.push(
@@ -24,7 +25,7 @@ function buildQuiz() {
       </div>
     );
   });
-  quizBox.innerHTML = output.join("");
+  quizBox.innerHTML = output.join('');
 }
 
 function showResults() {
