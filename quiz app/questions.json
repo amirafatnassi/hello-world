@@ -1,34 +1,34 @@
 [
   {
-    "question": "The plaka is the oldest quarter of which city",
-    "answer_a": "Athens",
-    "answer_b": "Prague",
-    "answer_c": "Rome",
-    "answer_d": "Vienna",
+    "title": "The plaka is the oldest quarter of which city",
+    "answer_1": "Athens",
+    "answer_2": "Prague",
+    "answer_3": "Rome",
+    "answer_4": "Vienna",
     "correctAnswer": "a"
   },
   {
-    "question": "What colour is the sky?",
-    "answer_a": "Red",
-    "answer_b": "Yellow",
-    "answer_c": "Green",
-    "answer_d": "Blue",
+    "title": "What colour is the sky?",
+    "answer_1": "Red",
+    "answer_2": "Yellow",
+    "answer_3": "Green",
+    "answer_4": "Blue",
     "correctAnswer": "d"
   },
   {
-    "question": "What is Kudzu ?",
-    "answer_a": "Antelope",
-    "answer_b": "Bird",
-    "answer_c": "Jewish settlement",
-    "answer_d": "Climbing plant",
+    "title": "What is Kudzu ?",
+    "answer_1": "Antelope",
+    "answer_2": "Bird",
+    "answer_3": "Jewish settlement",
+    "answer_4": "Climbing plant",
     "correctAnswer": "a"
   },
   {
-    "question": "The Plaka is the oldest quarter of which city?",
-    "answer_a": " Athens",
-    "answer_b": "Prague",
-    "answer_c": "Rome",
-    "answer_d": "Vienna",
+    "title": "The Plaka is the oldest quarter of which city?",
+    "answer_1": " Athens",
+    "answer_2": "Prague",
+    "answer_3": "Rome",
+    "answer_4": "Vienna",
     "correctAnswer": "a"
   }
 ]
