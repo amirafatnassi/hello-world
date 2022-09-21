@@ -41,6 +41,16 @@ function getQuestions() {
 
         //check the answer
         checkAnswer(theRightAnswer, qCount);
+
+        //remove previous question
+        quizArea.innerHTML = "";
+        answersArea.innerHTML = "";
+
+        //add questions data
+        addQuestiondata(questionsObject[currentIndex], qCount);
+
+        //handle bullets class
+        handleBullets();
       };
     }
   };
@@ -125,4 +135,14 @@ function checkAnswer(rAnswer, count) {
   if (rAnswer === theChoosenAnswer) {
     rightAnswers++;
   }
+}
+
+function handleBullets() {
+  let bulletsSpans = document.querySelectorAll(".bullets .spans span");
+  let arrayOfSpans = Array.from(bulletsSpans);
+  arrayOfSpans.forEach((span, index) => {
+    if (currentIndex === index) {
+      span.className = "on";
+    }
+  });
 }
