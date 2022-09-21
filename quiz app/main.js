@@ -4,6 +4,8 @@ let bulletsSpanContainer = document.querySelector(".bullets .spans");
 let quizArea = document.querySelector(".quiz-area");
 let answersArea = document.querySelector(".answers-area");
 let submitButton = document.querySelector(".submit-button");
+let bullets = document.querySelector(".bullets");
+let resultsContainer = document.querySelector(".results");
 
 // set options
 let currentIndex = 0;
@@ -51,6 +53,9 @@ function getQuestions() {
 
         //handle bullets class
         handleBullets();
+
+        //show results
+        showResults(qCount);
       };
     }
   };
@@ -78,49 +83,51 @@ function createBullets(num) {
 }
 
 function addQuestiondata(obj, count) {
-  //create H2 Question title
-  let questionTitle = document.createElement("h2");
-  //create question text
-  let questionText = document.createTextNode(obj.title);
-  //append text to h2
-  questionTitle.appendChild(questionText);
+  if (currentIndex < count) {
+    //create H2 Question title
+    let questionTitle = document.createElement("h2");
+    //create question text
+    let questionText = document.createTextNode(obj.title);
+    //append text to h2
+    questionTitle.appendChild(questionText);
 
-  //append the h2 to quiz area
-  quizArea.appendChild(questionTitle);
+    //append the h2 to quiz area
+    quizArea.appendChild(questionTitle);
 
-  //create answers
-  for (let i = 1; i <= 4; i++) {
-    //create main answer div
-    let mainDiv = document.createElement("div");
-    // add class to main div
-    mainDiv.className = "answers";
+    //create answers
+    for (let i = 1; i <= 4; i++) {
+      //create main answer div
+      let mainDiv = document.createElement("div");
+      // add class to main div
+      mainDiv.className = "answers";
 
-    //create radio input
-    let radioInput = document.createElement("input");
-    //add type + name +id+ data-attribute
-    radioInput.name = "question";
-    radioInput.type = "radio";
-    radioInput.id = `answer_${i}`;
-    radioInput.dataset.answer = obj[`answer_${i}`];
+      //create radio input
+      let radioInput = document.createElement("input");
+      //add type + name +id+ data-attribute
+      radioInput.name = "question";
+      radioInput.type = "radio";
+      radioInput.id = `answer_${i}`;
+      radioInput.dataset.answer = obj[`answer_${i}`];
 
-    //make first option selected
-    if (i === 1) {
-      radioInput.checked = true;
+      //make first option selected
+      if (i === 1) {
+        radioInput.checked = true;
+      }
+
+      //create label
+      let theLabel = document.createElement("label");
+      //add for attribute
+      theLabel.htmlFor = `answer_${i}`;
+      //create label text
+      let theLabelText = document.createTextNode(obj[`answer_${i}`]);
+      //add the text to label
+      theLabel.appendChild(theLabelText);
+      // add input + label to main div
+      mainDiv.appendChild(radioInput);
+      mainDiv.appendChild(theLabel);
+      //append all divs to answers area
+      answersArea.appendChild(mainDiv);
     }
-
-    //create label
-    let theLabel = document.createElement("label");
-    //add for attribute
-    theLabel.htmlFor = `answer_${i}`;
-    //create label text
-    let theLabelText = document.createTextNode(obj[`answer_${i}`]);
-    //add the text to label
-    theLabel.appendChild(theLabelText);
-    // add input + label to main div
-    mainDiv.appendChild(radioInput);
-    mainDiv.appendChild(theLabel);
-    //append all divs to answers area
-    answersArea.appendChild(mainDiv);
   }
 }
 
@@ -145,4 +152,26 @@ function handleBullets() {
       span.className = "on";
     }
   });
+}
+
+function showResults(count) {
+  let theResults;
+  if (currentIndex === count) {
+    quizArea.remove();
+    answersArea.remove();
+    submitButton.remove();
+    bullets.remove();
+
+    if (rightAnswers > count / 2 && rightAnswers < count) {
+      theResults = `<span class="good">Good</span>, ${rightAnswers} from ${count} Is Good.`;
+    } else if (rightAnswers === count) {
+      theResults = `<span class="perfect">All answers good</span>, ${rightAnswers} from ${count} Is Good.`;
+    } else {
+      theResults = `<span class="bad">Bad</span>, ${rightAnswers} from ${count}.`;
+    }
+    resultsContainer.innerHTML = theResults;
+    resultsContainer.style.padding="10px";
+    resultsContainer.style.backggroundColor="white";
+    resultsContainer.style.marginTop="10px";
+  }
 }
