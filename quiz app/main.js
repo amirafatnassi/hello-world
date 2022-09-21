@@ -3,9 +3,11 @@ let countSpan = document.querySelector(".count span");
 let bulletsSpanContainer = document.querySelector(".bullets .spans");
 let quizArea = document.querySelector(".quiz-area");
 let answersArea = document.querySelector(".answers-area");
+let submitButton = document.querySelector(".submit-button");
 
 // set options
 let currentIndex = 0;
+let rightAnswers = 0;
 
 function getQuestions() {
   let myRequest = new XMLHttpRequest();
@@ -28,6 +30,18 @@ function getQuestions() {
 
       //add question data
       addQuestiondata(questionsObject[currentIndex], qCount);
+
+      //click on submit
+      submitButton.onclick = () => {
+        //get right answer
+        let theRightAnswer = questionsObject[currentIndex].right_answer;
+
+        //increase index
+        currentIndex++;
+
+        //check the answer
+        checkAnswer(theRightAnswer, qCount);
+      };
     }
   };
   myRequest.open("GET", "questions.json", true);
@@ -69,19 +83,19 @@ function addQuestiondata(obj, count) {
     //create main answer div
     let mainDiv = document.createElement("div");
     // add class to main div
-    mainDiv.className = 'answers';
+    mainDiv.className = "answers";
 
     //create radio input
     let radioInput = document.createElement("input");
     //add type + name +id+ data-attribute
-    radioInput.name = 'question';
-    radioInput.type = 'radio';
+    radioInput.name = "question";
+    radioInput.type = "radio";
     radioInput.id = `answer_${i}`;
     radioInput.dataset.answer = obj[`answer_${i}`];
 
     //make first option selected
-    if(i===1){
-        radioInput.checked=true;
+    if (i === 1) {
+      radioInput.checked = true;
     }
 
     //create label
@@ -97,5 +111,18 @@ function addQuestiondata(obj, count) {
     mainDiv.appendChild(theLabel);
     //append all divs to answers area
     answersArea.appendChild(mainDiv);
+  }
+}
+
+function checkAnswer(rAnswer, count) {
+  let answers = document.getElementsByName("question");
+  let theChoosenAnswer;
+  for (let i = 0; i < answers.length; i++) {
+    if (answers[i].checked) {
+      theChoosenAnswer = answers[i].dataset.answer;
+    }
+  }
+  if (rAnswer === theChoosenAnswer) {
+    rightAnswers++;
   }
 }

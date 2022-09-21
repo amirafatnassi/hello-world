@@ -5,7 +5,7 @@
     "answer_2": "Prague",
     "answer_3": "Rome",
     "answer_4": "Vienna",
-    "correctAnswer": "a"
+    "right_answer": "Prague"
   },
   {
     "title": "What colour is the sky?",
@@ -13,7 +13,7 @@
     "answer_2": "Yellow",
     "answer_3": "Green",
     "answer_4": "Blue",
-    "correctAnswer": "d"
+    "right_answer": "Blue"
   },
   {
     "title": "What is Kudzu ?",
@@ -21,7 +21,7 @@
     "answer_2": "Bird",
     "answer_3": "Jewish settlement",
     "answer_4": "Climbing plant",
-    "correctAnswer": "a"
+    "right_answer": "Bird"
   },
   {
     "title": "The Plaka is the oldest quarter of which city?",
@@ -29,6 +29,6 @@
     "answer_2": "Prague",
     "answer_3": "Rome",
     "answer_4": "Vienna",
-    "correctAnswer": "a"
+    "right_answer": "Vienna"
   }
 ]
