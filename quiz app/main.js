@@ -6,10 +6,12 @@ let answersArea = document.querySelector(".answers-area");
 let submitButton = document.querySelector(".submit-button");
 let bullets = document.querySelector(".bullets");
 let resultsContainer = document.querySelector(".results");
+let countdownElement = document.querySelector(".countdown");
 
 // set options
 let currentIndex = 0;
 let rightAnswers = 0;
+let countdownInterval;
 
 function getQuestions() {
   let myRequest = new XMLHttpRequest();
@@ -33,6 +35,9 @@ function getQuestions() {
       //add question data
       addQuestiondata(questionsObject[currentIndex], qCount);
 
+      //start countdown
+      countdown(5, qCount);
+
       //click on submit
       submitButton.onclick = () => {
         //get right answer
@@ -53,6 +58,10 @@ function getQuestions() {
 
         //handle bullets class
         handleBullets();
+
+        //start countdown
+        clearInterval(countdownInterval);
+        countdown(5,qCount);
 
         //show results
         showResults(qCount);
@@ -170,8 +179,27 @@ function showResults(count) {
       theResults = `<span class="bad">Bad</span>, ${rightAnswers} from ${count}.`;
     }
     resultsContainer.innerHTML = theResults;
-    resultsContainer.style.padding="10px";
-    resultsContainer.style.backggroundColor="white";
-    resultsContainer.style.marginTop="10px";
+    resultsContainer.style.padding = "10px";
+    resultsContainer.style.backggroundColor = "white";
+    resultsContainer.style.marginTop = "10px";
+  }
+}
+
+function countdown(duration, count) {
+  if (currentIndex < count) {
+    let minutes, seconds;
+    countdownInterval = setInterval(function () {
+      minutes = parseInt(duration / 60);
+      seconds = parseInt(duration % 60);
+
+      minutes = minutes < 10 ? `0${minutes}` : minutes;
+      seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+      countdownElement.innerHTML = `${minutes}:${seconds}`;
+      if (--duration < 0) {
+        clearInterval(countdownInterval);
+        submitButton.click();
+      }
+    }, 1000);
   }
 }
