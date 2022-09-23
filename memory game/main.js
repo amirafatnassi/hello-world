@@ -8,7 +8,20 @@ document.querySelector(".control-buttons span").onclick = function () {
   document.querySelector(".control-buttons").remove();
 };
 
+//effect duration
 let duration = 1000;
+//select blocks container
 let blocksContainer = document.querySelector(".memory-game-blocks");
+
+//create array from game blocks
 let blocks = Array.from(blocksContainer.children);
-let orderRange=[...Array(blocks.length).keys()];
+
+//create range of keys
+//let orderRange = [...Array(blocks.length).keys()];
+let orderRange = Array.from(blocks.length).keys();
+
+
+//add order css propert to game blocks
+blocks.forEach((block, index) => {
+  block.style.order = orderRange[index];
+});
