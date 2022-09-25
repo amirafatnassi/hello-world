@@ -19,9 +19,7 @@ let blocks = Array.from(blocksContainer.children);
 //create range of keys
 //let orderRange = [...Array(blocks.length).keys()];
 let orderRange = Array.from(Array(blocks.length).keys());
-console.log(orderRange);
 shuffle(orderRange);
-console.log(orderRange);
 
 //add order css propert to game blocks
 blocks.forEach((block, index) => {
@@ -69,12 +67,16 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
     secondBlock.classList.remove("is-flipped");
     firstBlock.classList.add("has-match");
     secondBlock.classList.add("has-match");
+
+    document.getElementById('success').play();
   } else {
     triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
     setTimeout(() => {
       firstBlock.classList.remove("is-flipped");
       secondBlock.classList.remove("is-flipped");
     }, duration);
+    document.getElementById('fail').play();
+
   }
 }
 
