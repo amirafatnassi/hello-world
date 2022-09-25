@@ -18,8 +18,10 @@ let blocks = Array.from(blocksContainer.children);
 
 //create range of keys
 //let orderRange = [...Array(blocks.length).keys()];
-let orderRange = Array.from(blocks.length).keys();
+let orderRange = Array.from(Array(blocks.length).keys());
+console.log(orderRange);
 shuffle(orderRange);
+console.log(orderRange);
 
 //add order css propert to game blocks
 blocks.forEach((block, index) => {
@@ -45,6 +47,34 @@ function flipBlock(selectedBlock) {
     //stop clicking function
     stopClicking();
     //check matched block function
+    checkMatchedBlocks(allFlippedBlocks[0], allFlippedBlocks[1]);
+  }
+}
+
+//stop clicking gunction
+function stopClicking() {
+  //add class no clicking on main container
+  blocksContainer.classList.add("no-clicking");
+  setTimeout(() => {
+    //remove class no clicking after the duration
+    blocksContainer.classList.remove("no-clicking");
+  }, duration);
+}
+
+//check matched blocks
+function checkMatchedBlocks(firstBlock, secondBlock) {
+  let triesElement = document.querySelector(".tries span");
+  if (firstBlock.dataset.technology === secondBlock.dataset.technology) {
+    firstBlock.classList.remove("is-flipped");
+    secondBlock.classList.remove("is-flipped");
+    firstBlock.classList.add("has-match");
+    secondBlock.classList.add("has-match");
+  } else {
+    triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
+    setTimeout(() => {
+      firstBlock.classList.remove("is-flipped");
+      secondBlock.classList.remove("is-flipped");
+    }, duration);
   }
 }
 
@@ -67,14 +97,4 @@ function shuffle(array) {
     array[random] = temp;
   }
   return array;
-}
-
-//stop cliicking gunction
-function stopClicking() {
-  //add class no clicking on main container
-  blocksContainer.classList.add("no-clicking");
-  setTimeout(() => {
-    //remove class no clicking after the duration
-    blocksContainer.classList.remove("no-clicking");
-  }, duration);
 }

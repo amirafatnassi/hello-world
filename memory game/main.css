@@ -20,7 +20,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #F44336;
+  background-color: #f44336;
   color: #fff;
   padding: 15px 25px;
   font-size: 30px;
@@ -51,7 +51,7 @@ body {
 }
 
 .memory-game-blocks.no-clicking {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .memory-game-blocks .game-block {
@@ -93,7 +93,8 @@ body {
   backface-visibility: hidden;
   border: 5px solid #2196f3;
 }
-.memory-game-blocks .game-block.is-flipped {
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocks .game-block.has-match {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   transform: rotateY(180deg);
