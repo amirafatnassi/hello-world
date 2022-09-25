@@ -43,7 +43,8 @@ function flipBlock(selectedBlock) {
   //if there is 2 selected blocks
   if (allFlippedBlocks.length === 2) {
     //stop clicking function
-    //check matcjed block function
+    stopClicking();
+    //check matched block function
   }
 }
 
@@ -66,4 +67,14 @@ function shuffle(array) {
     array[random] = temp;
   }
   return array;
+}
+
+//stop cliicking gunction
+function stopClicking() {
+  //add class no clicking on main container
+  blocksContainer.classList.add("no-clicking");
+  setTimeout(() => {
+    //remove class no clicking after the duration
+    blocksContainer.classList.remove("no-clicking");
+  }, duration);
 }
